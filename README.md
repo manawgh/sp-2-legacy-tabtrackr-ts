@@ -6,6 +6,8 @@ In the public folder, you'll find a background.js file which is responsible for 
 
 The manifest.json file is responsible for providing metadata to the browser, e.g. extension permissions, icons, and important files like background.js, and index.html.
 
+youplaboum
+
 **GETTING STARTED**
 
 1. Fork and clone the repo.
