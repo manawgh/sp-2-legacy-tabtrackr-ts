@@ -59,6 +59,17 @@ function updateActiveTab(newTabId: number | undefined) {
   }
 }
 
+// VIC SAYS:
+
+/* function isTabValid (tab: chrome.tabs.Tab): boolean {
+ return (!chrome.runtime.lastError && tab && tab.url)
+}
+......
+      if ( isTabValid(tab) ) {
+        activeTabUrl = new URL(tab.url).hostname;
+      } */
+     
+
 // Listen for tab activation changes
 chrome.tabs.onActivated.addListener((activeInfo: chrome.tabs.TabActiveInfo) => {
   updateActiveTab(activeInfo.tabId);

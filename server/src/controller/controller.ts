@@ -28,6 +28,8 @@ const logVisits = async (req: Request, res: Response) => {
 
 };
 
+// VIC SAYS: 'visit' and 'body' could do with a type.
+
 const getStats = async (req: Request, res: Response) => {
   const { period } = req.params;
   const dayInMs = 24 * 60 * 60 * 1000; // todo done: DRYed multiplication on l.10, 13 & 16

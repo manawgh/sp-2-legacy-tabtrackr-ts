@@ -20,7 +20,8 @@ describe('Unit tests', () => {
     await VisitModel.destroy({where: {}});
   })
 
-  describe('Input/Output', () => {
+  // VIC SAYS: Consider adding an afterAll that closes the DB connection.
+
 
     it('should send a Visit to the database', () => new Promise( done => {
       const testVisit = { site: 'test.com', timeSpent: 10000 };
@@ -33,6 +34,8 @@ describe('Unit tests', () => {
       })
       .catch(err => console.log('Error sending tab info to DB:', err));
     }));
+
+    // VIC SAYS: Typically, in a test, you want to fail the test rather than just log the error.
 
     it('should receive a Visit[] from the database', () => new Promise( done => {
 
@@ -57,7 +60,7 @@ describe('Unit tests', () => {
 
   });
 
-  describe('should warn client when fields are missing', () => {
+  it('should warn client when fields are missing', () => {
 
     const expectedResult = 'One or more fields missing.';
 
@@ -71,11 +74,10 @@ describe('Unit tests', () => {
       })
     };
 
-    it('empty object', () => checkMissingFields({}));
+    // TODO: USE ASSERTIONS HERE
+    /* it('empty object', () => checkMissingFields({}));
     it('empty usage', () => checkMissingFields({ usage: [] }));
     it('empty timeSpent', () => checkMissingFields({ usage: [{ site: 'site' }] }));
-    it('empty site', () => checkMissingFields({ usage: [{ timeSpent: 'timeSpent' }] }));
+    it('empty site', () => checkMissingFields({ usage: [{ timeSpent: 'timeSpent' }] })); */
 
   });
-
-});
